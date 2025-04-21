@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 37 99 235; /* blue-600 */
+  --color-secondary: 20 184 166; /* teal-500 */
+  --color-accent: 249 115 22; /* orange-500 */
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+    scroll-padding-top: 80px;
+  }
+  
+  body {
+    @apply bg-white dark:bg-slate-950 text-neutral-900 dark:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-teal-500 hover:bg-teal-600 text-white;
+  }
+  
+  .btn-outline {
+    @apply border border-current bg-transparent;
+  }
+}
